@@ -1,0 +1,510 @@
+---
+const title = "UTEC Diagram - Hackathon Cloud Computing";
+const description = "Herramienta serverless basada en Diagram as Code para generar diagramas técnicos";
+import '../styles/global.css'
+---
+
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.webp" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<main class="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <!-- Hero Section -->
+    <section class="container mx-auto px-6 py-16">
+        <div class="text-center max-w-5xl mx-auto">
+            <div class="inline-flex items-center gap-2 bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
+                <span class="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></span>
+                Hackathon Cloud Computing
+            </div>
+
+            <h1 class="text-5xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
+                UTEC <span class="text-blue-600">Diagram</span>
+            </h1>
+
+            <p class="text-xl text-slate-600 mb-8 leading-relaxed max-w-4xl mx-auto">
+                Desarrolla una herramienta <strong>serverless</strong> basada en el concepto
+                <strong>Diagram as Code</strong> que permita la generación, edición y visualización
+                de diagramas técnicos a partir de definiciones escritas como código.
+            </p>
+
+            <div class="flex justify-center">
+                <a href="#proyecto"
+                   class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                    Conocer el proyecto
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Objective -->
+    <section id="proyecto" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-4xl font-bold text-slate-900 text-center mb-12">🎯 Objetivo del proyecto</h2>
+
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 mb-12 border border-blue-200">
+                    <p class="text-lg text-slate-700 leading-relaxed mb-6">
+                        Diseñar y desarrollar una <strong>aplicación web completamente serverless</strong>,
+                        basada en la infraestructura de AWS, que proporcione un entorno visual e interactivo
+                        para la definición y renderización de diagramas técnicos a partir de código fuente.
+                    </p>
+
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-white rounded-xl p-6 shadow-sm">
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                                <span class="text-2xl">☁️</span>
+                            </div>
+                            <h3 class="font-semibold text-slate-900 mb-2">Arquitecturas AWS</h3>
+                            <p class="text-slate-600 text-sm">Visualizaciones de soluciones con servicios de AWS</p>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-6 shadow-sm">
+                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                                <span class="text-2xl">🗄️</span>
+                            </div>
+                            <h3 class="font-semibold text-slate-900 mb-2">Diagramas E-R</h3>
+                            <p class="text-slate-600 text-sm">Diagramas entidad-relación para bases de datos</p>
+                        </div>
+
+                        <div class="bg-white rounded-xl p-6 shadow-sm">
+                            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                                <span class="text-2xl">📊</span>
+                            </div>
+                            <h3 class="font-semibold text-slate-900 mb-2">Estructuras JSON</h3>
+                            <p class="text-slate-600 text-sm">Representaciones gráficas de estructuras JSON</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 p-6 bg-slate-50 rounded-xl">
+                        <p class="text-slate-700">
+                            <strong>Almacenamiento:</strong> Cada diagrama y su código fuente correspondiente
+                            serán almacenados en buckets de Amazon S3, organizados por tipo de diagrama,
+                            permitiendo así su acceso inmediato y la posibilidad de descarga para documentación técnica.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Functional Requirements -->
+    <section class="py-16 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold text-slate-900 text-center mb-12">⚙️ Requerimientos funcionales</h2>
+
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <!-- Frontend Requirements -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                                <span class="text-blue-600 font-bold">🖥️</span>
+                            </div>
+                            <h3 class="text-2xl font-semibold text-slate-900">Frontend</h3>
+                        </div>
+
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></span>
+                                <span class="text-slate-700">Página de signup/login para autenticación en la web</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></span>
+                                <span class="text-slate-700">Editor embebido donde el usuario puede escribir código</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></span>
+                                <span class="text-slate-700">Opción para subir archivo con definición del diagrama (.txt) <em>(opcional)</em></span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></span>
+                                <span class="text-slate-700">Funcionalidad para pegar texto desde el portapapeles</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></span>
+                                <span class="text-slate-700">Botón "Generar diagrama" que envía el código al backend</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></span>
+                                <span class="text-slate-700">Visualización del diagrama solo después de presionar "Generar"</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></span>
+                                <span class="text-slate-700">Visualización del diagrama como imagen (SVG o PNG)</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></span>
+                                <span class="text-slate-700">Exportación del diagrama en PNG, SVG o PDF</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></span>
+                                <span class="text-slate-700">Selector del tipo de diagrama (AWS, ER, etc.)</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></span>
+                                <span class="text-slate-700">Validación de que haya código antes de enviarlo</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></span>
+                                <span class="text-slate-700">Carga de código desde URL de GitHub <em>(opcional)</em></span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Backend Requirements -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                                <span class="text-green-600 font-bold">⚡</span>
+                            </div>
+                            <h3 class="text-2xl font-semibold text-slate-900">Backend (API REST)</h3>
+                        </div>
+
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <span class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
+                                <span class="text-slate-700">Recibe peticiones con código fuente desde el frontend</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
+                                <span class="text-slate-700">Rutas protegidas por token generado en login</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
+                                <span class="text-slate-700">Valida el formato y contenido del código recibido</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
+                                <span class="text-slate-700">Genera diagramas usando herramientas de diagramación (Diagrams, ERAlchemy, etc.)</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
+                                <span class="text-slate-700">Guarda diagramas y código en bucket S3 con identificador único por usuario</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
+                                <span class="text-slate-700">Retorna el diagrama como imagen (PNG o SVG) al frontend</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
+                                <span class="text-slate-700">Permite especificar el tipo de diagrama solicitado</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
+                                <span class="text-slate-700">Maneja errores de parsing con mensajes claros (400/500)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Specifications -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-slate-900 text-center mb-12">🔧 Especificaciones técnicas</h2>
+
+                <div class="bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-8 text-white mb-8">
+                    <h3 class="text-xl font-semibold mb-6 text-center">Requisitos obligatorios</h3>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3">
+                                <span class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center text-xs font-bold">✓</span>
+                                <span>Login debe ser multitenancy</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center text-xs font-bold">✓</span>
+                                <span>Frontend debe estar en S3</span>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3">
+                                <span class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center text-xs font-bold">✓</span>
+                                <span>Rutas totalmente protegidas por token</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center text-xs font-bold">✓</span>
+                                <span>Uso de API Gateway para exposición de APIs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technologies Table -->
+                <div class="bg-slate-50 rounded-2xl p-8">
+                    <h3 class="text-2xl font-semibold text-slate-900 mb-6 text-center">🛠️ Tecnologías propuestas</h3>
+
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead>
+                            <tr class="border-b border-slate-300">
+                                <th class="text-left py-4 px-6 font-semibold text-slate-900">Componente</th>
+                                <th class="text-left py-4 px-6 font-semibold text-slate-900">Tecnología</th>
+                            </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200">
+                            <tr class="hover:bg-slate-100 transition-colors">
+                                <td class="py-4 px-6 text-slate-700 font-medium">Lenguaje de diagramas</td>
+                                <td class="py-4 px-6 text-slate-600">Diagrams / ERAlchemy / json2graph / Mermaid</td>
+                            </tr>
+                            <tr class="hover:bg-slate-100 transition-colors">
+                                <td class="py-4 px-6 text-slate-700 font-medium">Backend (generador)</td>
+                                <td class="py-4 px-6 text-slate-600">Python en Lambda</td>
+                            </tr>
+                            <tr class="hover:bg-slate-100 transition-colors">
+                                <td class="py-4 px-6 text-slate-700 font-medium">Frontend</td>
+                                <td class="py-4 px-6 text-slate-600">React / Vite en S3</td>
+                            </tr>
+                            <tr class="hover:bg-slate-100 transition-colors">
+                                <td class="py-4 px-6 text-slate-700 font-medium">API REST</td>
+                                <td class="py-4 px-6 text-slate-600">API Gateway</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hackathon Rules -->
+    <section class="py-16 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-4xl font-bold text-slate-900 text-center mb-12">📋 Bases de la Hackathon</h2>
+
+                <div class="grid lg:grid-cols-2 gap-8 mb-12">
+                    <!-- Objective -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <h3 class="text-2xl font-semibold text-slate-900 mb-4 flex items-center gap-3">
+                            <span class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">🎯</span>
+                            Objetivo
+                        </h3>
+                        <p class="text-slate-700 leading-relaxed">
+                            La hackathon busca fomentar el <strong>aprendizaje práctico</strong> y el
+                            <strong>trabajo colaborativo</strong> entre los estudiantes, utilizando herramientas
+                            y servicios de Cloud Computing. Se espera que los equipos desarrollen una solución
+                            funcional e innovadora que resuelva un problema real o simulado, aplicando los
+                            conocimientos adquiridos en clase.
+                        </p>
+                    </div>
+
+                    <!-- Participants -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <h3 class="text-2xl font-semibold text-slate-900 mb-4 flex items-center gap-3">
+                            <span class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">👥</span>
+                            Participantes
+                        </h3>
+                        <ul class="space-y-3 text-slate-700">
+                            <li class="flex items-start gap-3">
+                                <span class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
+                                <span>Alumnos matriculados en el curso de Cloud Computing</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
+                                <span>Equipos de 1 a 3 integrantes (pueden ser de diferentes secciones)</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
+                                <span>Todos los integrantes deben estar registrados en el formulario oficial</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Evaluation Criteria -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg mb-8">
+                    <h3 class="text-2xl font-semibold text-slate-900 mb-6 flex items-center gap-3">
+                        <span class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">📊</span>
+                        Criterios de evaluación
+                    </h3>
+
+                    <div class="grid md:grid-cols-3 gap-6 mb-6">
+                        <div class="text-center p-6 bg-slate-50 rounded-xl">
+                            <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-blue-600 font-bold text-xl">1</span>
+                            </div>
+                            <h4 class="font-semibold text-slate-900 mb-2">Entregables completos</h4>
+                        </div>
+
+                        <div class="text-center p-6 bg-slate-50 rounded-xl">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-green-600 font-bold text-xl">2</span>
+                            </div>
+                            <h4 class="font-semibold text-slate-900 mb-2">Solución técnica</h4>
+                            <p class="text-slate-600 text-sm">(arquitectura cloud, eficiencia)</p>
+                        </div>
+
+                        <div class="text-center p-6 bg-slate-50 rounded-xl">
+                            <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-purple-600 font-bold text-xl">3</span>
+                            </div>
+                            <h4 class="font-semibold text-slate-900 mb-2">Solución final</h4>
+                            <p class="text-slate-600 text-sm">(de acuerdo al avance presentado)</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-amber-50 border border-amber-200 rounded-xl p-6">
+                        <div class="flex items-start gap-3">
+                            <span class="text-amber-600 text-xl">💡</span>
+                            <div>
+                                <h4 class="font-semibold text-amber-800 mb-2">Nota importante</h4>
+                                <p class="text-amber-700 text-sm leading-relaxed">
+                                    El alcance de la Hackathon es amplio, por lo que <strong>no se espera que el proyecto
+                                    esté completamente terminado</strong>. Se evaluará de forma justa en función del avance
+                                    logrado y del esfuerzo demostrado. Lo importante es que presenten lo que hayan
+                                    desarrollado hasta el momento de la entrega.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Deliverables -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <h3 class="text-2xl font-semibold text-slate-900 mb-6 flex items-center gap-3">
+                        <span class="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center">📦</span>
+                        Entregables
+                    </h3>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="flex items-start gap-4 p-4 bg-slate-50 rounded-xl">
+                            <div class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <span class="text-blue-600 font-bold text-sm">1</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-900 mb-1">Link de la solución final</h4>
+                                <p class="text-slate-600 text-sm">Link del frontend desplegado</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 bg-slate-50 rounded-xl">
+                            <div class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <span class="text-green-600 font-bold text-sm">2</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-900 mb-1">Repositorio GitHub</h4>
+                                <p class="text-slate-600 text-sm">Link de los códigos usados</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 bg-slate-50 rounded-xl">
+                            <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <span class="text-purple-600 font-bold text-sm">3</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-900 mb-1">Endpoint de validación S3</h4>
+                                <p class="text-slate-600 text-sm">Explicado al momento de presentar el reto</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 bg-slate-50 rounded-xl">
+                            <div class="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <span class="text-orange-600 font-bold text-sm">4</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-900 mb-1">Diagrama de arquitectura</h4>
+                                <p class="text-slate-600 text-sm">Diagrama de arquitectura de solución</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Information -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl font-bold text-slate-900 mb-8">📋 Información adicional</h2>
+
+                <div class="bg-slate-50 rounded-2xl p-8">
+                    <p class="text-slate-600 mb-6">
+                        Para más detalles sobre inscripciones, fechas específicas y formulario oficial, consulta:
+                    </p>
+                    <a href="https://hackathon.cs2032.com"
+                       class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium text-lg">
+                        <span>hackathon.cs2032.com</span>
+                        <span class="text-sm">↗</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-2xl font-bold mb-4">¡Éxito en tu desarrollo! 🚀</h3>
+            <p class="text-slate-400 mb-6">
+                Aplica todo lo aprendido en Cloud Computing y crea una solución innovadora.
+            </p>
+            <p class="text-slate-500 text-sm">
+                UTEC Diagram - Hackathon Cloud Computing • 2025
+            </p>
+        </div>
+    </footer>
+</main>
+</body>
+</html>
+
+<style>
+    body {
+        font-family: 'Inter', sans-serif;
+        line-height: 1.6;
+    }
+
+    .container {
+        max-width: 1200px;
+    }
+
+    /* Smooth scrolling */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Custom animations */
+    @keyframes pulse {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.5;
+        }
+    }
+
+    .animate-pulse {
+        animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    /* Modern hover effects */
+    .hover\:scale-105:hover {
+        transform: scale(1.05);
+    }
+
+    .hover\:-translate-y-1:hover {
+        transform: translateY(-0.25rem);
+    }
+
+    /* Smooth transitions */
+    * {
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 300ms;
+    }
+
+    /* Table hover effects */
+    tbody tr:hover {
+        background-color: #f8fafc;
+    }
+</style>
